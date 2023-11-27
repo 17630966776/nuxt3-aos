@@ -3,6 +3,7 @@
 	"version": "1.0.3",
 	"description": "Animate on scroll library of Nuxt3",
 	"repository": "17630966776/nuxt3-aos",
+	"author": "LinWu",
 	"license": "MIT",
 	"type": "module",
 	"exports": {
@@ -41,5 +42,15 @@
 		"eslint": "^8.54.0",
 		"nuxt": "^3.8.2",
 		"vitest": "^0.33.0"
-	}
+	},
+	"keywords": [
+		"nuxt3",
+		"aos",
+		"nuxt-aos",
+		"vue-aos",
+		"wow",
+		"wowjs",
+		"animate on scroll",
+		"scroll animation"
+	]
 }

@@ -1,7 +1,7 @@
 import { defineNuxtPlugin } from "#app";
 
 export default defineNuxtPlugin(nuxtApp => {
-	const { baseClassName } = nuxtApp.$config.public.$aos;
+	const baseClassName = "animate__animated";
 	let observer: IntersectionObserver;
 	nuxtApp.vueApp.directive("aos", {
 		created(el, binding) {
