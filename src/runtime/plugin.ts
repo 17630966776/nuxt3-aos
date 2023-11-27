@@ -4,7 +4,7 @@ export default defineNuxtPlugin(nuxtApp => {
 	const { baseClassName } = nuxtApp.$config.public.$aos;
 	let observer: IntersectionObserver;
 	nuxtApp.vueApp.directive("aos", {
-		created(el, binding, vnode, prevVnode) {
+		created(el, binding) {
 			const add_class_list = binding.value || [];
 			const class_list = [baseClassName, ...add_class_list];
 
@@ -25,10 +25,10 @@ export default defineNuxtPlugin(nuxtApp => {
 			);
 			observer.observe(el);
 		},
-		beforeUnmount(el, binding, vnode, prevVnode) {
+		beforeUnmount(el) {
 			observer.unobserve(el);
 		},
-		getSSRProps(binding, vnode) {
+		getSSRProps() {
 			return {};
 		},
 	});
