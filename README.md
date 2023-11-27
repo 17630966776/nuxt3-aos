@@ -1,6 +1,6 @@
 # nuxt3-aos
 
-## Quick Setup
+## Basic Usage
 
 ### 1、Install
 

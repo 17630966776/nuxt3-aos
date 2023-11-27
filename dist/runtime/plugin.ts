@@ -3,19 +3,29 @@ import { defineNuxtPlugin } from "#app";
 export default defineNuxtPlugin(nuxtApp => {
 	const baseClassName = "animate__animated";
 	let observer: IntersectionObserver;
+
 	nuxtApp.vueApp.directive("aos", {
 		created(el, binding) {
+			el.style.visibility = "hidden";
+			el.style.animationDelay = el.getAttribute("data-aos-delay");
+			el.style.animationDuration = el.getAttribute("data-aos-duration");
 			const add_class_list = binding.value || [];
 			const class_list = [baseClassName, ...add_class_list];
 
 			observer = new IntersectionObserver(
 				(entries, observer) => {
 					entries.forEach((entry: any) => {
-						if (entry.isIntersecting && entry.boundingClientRect.top > 0) {
-							entry.target.classList.add(...class_list);
-							entry.target.onanimationend = () => {
-								entry.target.classList.remove(...class_list);
-							};
+						if (entry.isIntersecting) {
+							entry.target.style.visibility = "visible";
+							if (entry.boundingClientRect.top > 0) {
+								entry.target.classList.add(...class_list);
+								entry.target.style.visibility = "visible";
+								entry.target.onanimationend = () => {
+									entry.target.classList.remove(...class_list);
+								};
+							}
+						} else {
+							el.style.visibility = "hidden";
 						}
 					});
 				},
