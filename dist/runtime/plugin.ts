@@ -7,8 +7,14 @@ export default defineNuxtPlugin(nuxtApp => {
 	nuxtApp.vueApp.directive("aos", {
 		created(el, binding) {
 			el.style.visibility = "hidden";
-			el.style.animationDelay = el.getAttribute("data-aos-delay");
-			el.style.animationDuration = el.getAttribute("data-aos-duration");
+			const delay = el.getAttribute("data-aos-delay");
+			const duration = el.getAttribute("data-aos-duration");
+			if (delay) {
+				el.style.animationDelay = delay;
+			}
+			if (duration) {
+				el.style.animationDuration = duration;
+			}
 			const add_class_list = binding.value || [];
 			const class_list = [baseClassName, ...add_class_list];
 
