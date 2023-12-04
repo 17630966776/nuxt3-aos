@@ -14,8 +14,6 @@ npm install --save-dev nuxt3-aos
 
 **✅Add `nuxt3-aos` to the `modules` section of `nuxt.config.ts`**
 
-**✅Add `animate.css` to the `css` section of `nuxt.config.ts`**
-
 ```js
 export default defineNuxtConfig({
 	// ...
