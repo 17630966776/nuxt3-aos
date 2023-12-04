@@ -2,8 +2,8 @@ import { defineNuxtModule, createResolver, addPlugin } from '@nuxt/kit';
 
 const module = defineNuxtModule({
   meta: {
-    name: "my-module",
-    configKey: "myModule"
+    name: "nuxt3-aos",
+    configKey: "nuxt3Aos"
   },
   // Default configuration options of the Nuxt module
   defaults: {},
