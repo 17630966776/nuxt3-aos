@@ -20,14 +20,11 @@ npm install --save-dev nuxt3-aos
 export default defineNuxtConfig({
 	// ...
 	modules: ["nuxt3-aos"],
-	css: ["animate.css"],
 	// ...
 });
 ```
 
 ### 3、Basic Usage
-
-
 
 **Add `v-aos` to the element you want to animate**
 
