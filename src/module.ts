@@ -9,6 +9,7 @@ export default defineNuxtModule<ModuleOptions>({
 		configKey: "nuxt3Aos",
 	},
 	// Default configuration options of the Nuxt module
+	defaults: {},
 	setup(options, nuxt) {
 		const resolver = createResolver(import.meta.url);
 

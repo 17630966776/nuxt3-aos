@@ -1,5 +1,5 @@
 import { defineNuxtPlugin } from "#app";
-
+import "animate.css";
 export default defineNuxtPlugin(nuxtApp => {
 	const baseClassName = "animate__animated";
 	let observer: IntersectionObserver;

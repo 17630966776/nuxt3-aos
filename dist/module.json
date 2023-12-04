@@ -1,5 +1,5 @@
 {
-  "name": "nuxt3-aos",
-  "configKey": "nuxt3Aos",
-  "version": "1.0.8"
+  "name": "my-module",
+  "configKey": "myModule",
+  "version": "1.0.0"
 }

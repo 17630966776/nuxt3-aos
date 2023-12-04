@@ -1,12 +1,16 @@
-import jiti from "file:///D:/workspace/nuxt3-aos/node_modules/jiti/lib/index.js";
+import { defineNuxtModule, createResolver, addPlugin } from '@nuxt/kit';
 
-/** @type {import("D:/workspace/nuxt3-aos/src/module")} */
-const _module = jiti(null, {
-  "esmResolve": true,
-  "interopDefault": true,
-  "alias": {
-    "nuxt3-aos": "D:/workspace/nuxt3-aos"
+const module = defineNuxtModule({
+  meta: {
+    name: "my-module",
+    configKey: "myModule"
+  },
+  // Default configuration options of the Nuxt module
+  defaults: {},
+  setup(options, nuxt) {
+    const resolver = createResolver(import.meta.url);
+    addPlugin(resolver.resolve("./runtime/plugin"));
   }
-})("D:/workspace/nuxt3-aos/src/module.ts");
+});
 
-export default _module;
+export { module as default };
