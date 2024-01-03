@@ -36,6 +36,14 @@ export default defineNuxtConfig({
 <div v-aos="['animate__fadeInUp']" data-aos-delay="0.5s" data-aos-duration="1s">An animated element</div>
 ```
 
+**The `.once` modifier allows element animation to be executed only once**
+
+```html
+<div v-aos.once="['animate__fadeInUp']" data-aos-delay="0.5s" data-aos-duration="1s">An animated element</div>
+```
+
+
+
 **If you want to animate an element that is already in the viewport by default, you can add the animation class name without using a directive**
 
 \*Don't forget the base class name `animate__animated`
