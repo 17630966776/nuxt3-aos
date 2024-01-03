@@ -6,6 +6,7 @@ export default defineNuxtPlugin(nuxtApp => {
 
 	nuxtApp.vueApp.directive("aos", {
 		created(el, binding) {
+			console.log(binding);
 			el.style.visibility = "hidden";
 			const delay = el.getAttribute("data-aos-delay");
 			const duration = el.getAttribute("data-aos-duration");
@@ -27,7 +28,9 @@ export default defineNuxtPlugin(nuxtApp => {
 								entry.target.classList.add(...class_list);
 								entry.target.style.visibility = "visible";
 								entry.target.onanimationend = () => {
-									entry.target.classList.remove(...class_list);
+									if (!binding.modifiers.once) {
+										entry.target.classList.remove(...class_list);
+									}
 								};
 							}
 						} else {
